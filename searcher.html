@@ -5,47 +5,113 @@
     <title>search by filter</title>
     <link rel="stylesheet" href="style/general_style.css">
     <link rel="stylesheet" href="style/search_page.css">
+    <link rel="stylesheet" href="style/special_input.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 <body>
     <page class="page">
         <div id="navbar">
+            <div class="navbar_item">
+                <div class="navbar_show_part">
+                    <span class="navbar_icon material-symbols-outlined">
+                        home
+                    </span>
+                </div>
+                <div class="navber_hidden_part">
+                    <h2 class="navbar_header">Home</h2>
+                </div>
+            </div>
 
+            <div class="navbar_item">
+                <div class="navbar_show_part">
+                    <span class="navbar_icon material-symbols-outlined">
+                        search
+                    </span>
+                </div>
+                <div class="navber_hidden_part">
+                    <h2 class="navbar_header">Search</h2>
+                </div>
+            </div>
+
+            <div class="navbar_item">
+                <div class="navbar_show_part">
+                    <span class="navbar_icon material-symbols-outlined">
+                        thumb_up
+                    </span>
+                </div>
+                <div class="navber_hidden_part">
+                    <h2 class="navbar_header">Rate</h2>
+                </div>
+            </div>
+
+            <div class="navbar_item">
+                <div class="navbar_show_part">
+                    <span class="navbar_icon material-symbols-outlined">
+                        add_circle
+                    </span>
+                </div>
+                <div class="navber_hidden_part">
+                    <h2 class="navbar_header">Home</h2>
+                </div>
+            </div>
         </div>
+
+
+
         <main class="main_content">
             <section class="filter_section">
-                <h1 class="primary_header search_header">search by filter</h1>
-                <div>
-                    <label for="filters">Choose filter:</label>
-                    <select id="filters">
-                        <option value="Name">Name</option>
-                        <option value="City">City</option>
-                        <option value="Kosher">Kosher</option>
-                    </select>
+                <div class="filter_section_rigth">
+                    <img src="assets/eating_togheter_image.svg" alt="" class="filter_section_image">
+                    <h1 class="primary_header">Its better to eat togheter!</h1>
+                </div>
+                <div class="filter_section_left">
+                    <h1 class="primary_header search_header">search by filter</h1>
+                    <div>
+                        <label for="filters">Choose filter:</label>
+                        <select id="filters">
+                            <option value="Name">Name</option>
+                            <option value="City">City</option>
+                            <option value="Kosher">Kosher</option>
+                        </select>
+                        <input placeholder="Filter value" id="filters_value" required class="regular_input"
+                            type="text"><br><br>
+                    </div>
+                    <div>
+                        <label for="price">Choose Price:</label>
+                        <select name="price" id="price">
+                            <option value="cheap">cheap</option>
+                            <option value="medium">medium</option>
+                            <option value="Expensive">Expensive</option>
+                        </select><br><br>
+                    </div>
+                    <div>
+                        <label for="kosher">Choose if Kosher:</label>
+                        <select name="kosher" id="kosher">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select><br><br>
+                    </div>
+                    <div>
+                        <label for="rate">Choose minimum rate:</label>
+                        <input max="5" id="min_rate_input" class="regular_input" type="number"><br><br>
+                    </div>
+                    <button class="regular_button">Search</button>
+                </div>
 
-                    <input placeholder="Filter value" id="filters_value" required class="regular_input"
-                        type="text"><br><br>
-                </div>
-                <div>
-                    <label for="price">Choose Price:</label>
-                    <select name="price" id="price">
-                        <option value="cheap">cheap</option>
-                        <option value="medium">medium</option>
-                        <option value="Expensive">Expensive</option>
-                    </select><br><br>
-                </div>
-                <div>
-                    <label for="kosher">Choose if Kosher:</label>
-                    <select name="kosher" id="kosher">
-                        <option value="true">true</option>
-                        <option value="false">false</option>
-                    </select><br><br>
-                </div>
-                <div>
-                    <label for="rate">Choose minimum rate:</label>
-                    <input max="5" id="min_rate_input" class="regular_input" type="number"><br><br>
-                </div>
-                <button class="regular_button">Search</button>
 
             </section>
             <section class="display_section">
@@ -53,9 +119,190 @@
                     <div class="hummus_container_top">
                         <h2 class="secondary_header">Humusiot found</h2>
                     </div>
+                    <div class="hummus_container_middle">
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Name</h4>
+                            <h4 class="hummus_container_city">City</h4>
+                            <h4 class="hummus_container_open">Open</h4>
+                            <h4 class="hummus_container_kosher">Kosher</h4>
+                            <h4 class="hummus_container_rating">Rating</h4>
+                        </div>
+                    </div>
                     <div class="hummus_container_bottom">
                         <!-- Fill with humusiot -->
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                restaurant
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star_half
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                event_busy
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star_half
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                restaurant
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                event_busy
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                event_busy
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                event_busy
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="hummusia_item">
+                            <h4 class="hummus_container_name">Ron ubanav</h4>
+                            <h4 class="hummus_container_city">amirim</h4>
+                            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                                event_busy
+                            </span>
+                            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                                check_circle
+                            </span>
+                            <div class="hummus_container_rating">
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                                <span class="hummusia_star_icon material-symbols-outlined">
+                                    star
+                                </span>
+                            </div>
+                        </div>
+
+
                     </div>
+                </div>
                 </div>
             </section>
         </main>

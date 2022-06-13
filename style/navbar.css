@@ -1,0 +1,49 @@
+#navbar {
+    width: 6rem;
+    background-color: gray;
+    overflow: hidden;
+    transition: all .3s;
+    height: 100vh;
+    position: fixed;
+}
+
+#navbar:hover {
+    width: 18rem;
+}
+
+.navbar_item {
+    display: flex;
+    width: 100%;
+    height: 6rem;
+    cursor: pointer;
+    transition: all .3s;
+
+}
+
+.navbar_item:hover {
+    background-color: aliceblue;
+}
+
+.navbar_show_part {
+    width: 6rem;
+    display: grid;
+    place-items: center;
+    margin-right: 2rem;
+
+}
+
+.navber_hidden_part {
+    width: 6rem;
+    display: grid;
+    place-items: center;
+
+}
+
+.navbar_header {
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.navbar_icon {
+    font-size: 6rem !important;
+}

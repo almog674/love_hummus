@@ -4,6 +4,8 @@ Author: Hanich 08
 Porpuse: Styling general objects for using all over the program.
 */
 
+@import "constants.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -15,18 +17,9 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-    --teal-green: #128C7E;
-    --teal-dark-green: #075E54;
-    --light-green: #25D366;
-    --blue: #34B7F1;
-    --light-gray: #AAB8C2;
-}
-
-
 .page {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(315deg, var(--teal-dark-green) 0%, var(--light-green) 74%);
     background-repeat: no-repeat;

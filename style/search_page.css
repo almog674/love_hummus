@@ -3,13 +3,14 @@ Name: search_page.js
 Author: Hanich 08
 Porpuse: Styling the search page.
 */
+@import "navbar.css";
 
 .main_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    flex: 0.8;
+    flex: 1;
 }
 
 .filter_section {
@@ -17,9 +18,28 @@ Porpuse: Styling the search page.
     padding: 2rem;
     border-radius: 1rem;
     display: flex;
+
+    width: 80rem;
+    height: 30rem;
+}
+
+.filter_section_rigth {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter_section_image {
+    width: 60%;
+}
+
+.filter_section_left {
+    flex: 0.5;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40rem;
 }
 
 .search_header {
@@ -30,7 +50,66 @@ Porpuse: Styling the search page.
     background-color: var(--light-gray);
     padding: 2rem;
     border-radius: 1rem;
-    width: 40rem;
+    width: 80rem;
     text-align: center;
     height: 30rem;
+}
+
+.hummus_container_top {
+    margin-bottom: 2rem;
+}
+
+.hummus_container_middle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hummus_container_bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: 17rem;
+}
+
+.hummus_container_bottom::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hummusiot */
+.hummusia_item {
+    display: flex;
+    border-radius: 100rem;
+    width: 90%;
+    background-color: white;
+    height: 3rem;
+    align-items: center;
+    margin: .5rem;
+}
+
+.hummus_container_name {
+    flex: 0.35;
+}
+
+.hummus_container_city {
+    flex: 0.2;
+}
+
+.hummus_container_open {
+    flex: 0.1;
+}
+
+.hummus_container_kosher {
+    flex: 0.1;
+}
+
+.hummus_container_rating {
+    flex: 0.25;
+}
+
+.hummusia_star_icon {
+    color: gold;
 }
