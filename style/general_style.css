@@ -5,11 +5,14 @@ Porpuse: Styling general objects for using all over the program.
 */
 
 @import "constants.css";
+@import "navbar.css";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: black;
 }
 
 html {

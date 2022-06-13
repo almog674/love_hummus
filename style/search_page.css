@@ -3,7 +3,6 @@ Name: search_page.js
 Author: Hanich 08
 Porpuse: Styling the search page.
 */
-@import "navbar.css";
 
 .main_content {
     display: flex;

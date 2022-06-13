@@ -2,10 +2,8 @@
 <html>
 
 <head>
-    <title>rate hummusia</title>
+    <title>add new hummusia</title>
     <link rel="stylesheet" href="style/general_style.css">
-    <link rel="stylesheet" href="style/rate_page.css">
-    <link rel="stylesheet" href="style/special_input.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -52,7 +50,7 @@
                 </div>
             </a>
 
-            <a href="adder.html" class="navbar_item">
+            <a href="adderd.html" class="navbar_item">
                 <div class="navbar_show_part">
                     <span class="navbar_icon material-symbols-outlined">
                         add_circle
@@ -67,34 +65,33 @@
 
 
         <main class="main_content">
-            <section class="rate_section">
-                <div class="rate_section_right">
-                    <img src="assets/rate_image.svg" alt="" class="rate_section_image">
-                    <h1 class="primary_header">Rate so others will enjoy too!</h1>
-                </div>
-                <div class="rate_container">
-                    <div class="rate_container_top">
-                        <h1 class="primary_header">rate hummusia</h1>
-                    </div>
-                    <form action="#" class="rate_hummusia_form">
-                        <div class="special_input_container">
-                            <input type="text" class="special_input" placeholder="Hummusia Name">
-                            <label class="special_input_label" for="rate">Hummusia Name</label>
-                        </div>
+            <h1>add new hummusia</h1>
+            <label>Hummusia Name:</label>
+            <input type="text" id="name"><br><br>
 
+            <label>Hummusia City:</label>
+            <input type="text" id="city"><br><br>
 
+            <label for="kosher">Choose if Kosher:</label>
+            <select name="kosher" id="kosher">
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select><br><br>
 
-                        <div class="special_input_container">
-                            <input type="number" max='5' min="0" class="special_input" placeholder="Rating">
-                            <label class="special_input_label" for="rate">Choose rate</label>
-                        </div>
-                        <button class="regular_button">Rate now!</button>
+            <label for="open">Choose opening hours:</label>
 
-                    </form>
-                </div>
-            </section>
+            <input type="time" id="open"></input>
+            <label>-</label>
+            <input type="time" id="close"></input>
+            <br><br>
+
+            <button class="regular_button">Add now!</button>
+
         </main>
     </page>
+
+
+
 
 
 </body>

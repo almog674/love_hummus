@@ -1,4 +1,4 @@
-.form__group:not(:last-child) {
+.special_input_container:not(:last-child) {
     margin-bottom: 2rem;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .special_input::-webkit-input-placeholder {
-    color: #ddd;
+    color: var(--teal-green);
 }
 
 .special_input_label {
