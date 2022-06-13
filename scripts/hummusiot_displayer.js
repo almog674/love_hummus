@@ -1,76 +1,76 @@
 /*
-Name: hummus_api.js
+Name: hummusApi.js
 Author: Hanich 08
 Purpose: Display the hummusiot in the ui.
 */
 
 class HummusiotDisplayer {
     constructor() {
-        this.hummus_container = document.querySelector(".hummus_container_bottom")
+        this.hummusContainer = document.querySelector(".hummus_container_bottom")
     }
 
-    check_if_open(opening_time, closing_time) {
+    checkIfOpen(openingTime, closingTime) {
         /*
-            opening_time: The opening time of the hummus.
-            closing_time: The closing time of the hummus
+            openingTime: The opening time of the hummus.
+            closingTime: The closing time of the hummus
             return: icon determine if the restaraunt is closed or open.
         */
-        let current_date = new Date();
+        let currentDate = new Date();
 
-        if (current_date.getTime() >= opening_time && current_date.getTime() <= closing_time) {
+        if (currentDate.getTime() >= openingTime && currentDate.getTime() <= closingTime) {
             return "restaurant"
         } else {
             return "event_busy"
         }
     }
 
-    get_rating_html(rating_sum, number_of_ratings) {
+    getRatingHtml(ratingSum, numberOfRatings) {
         /*
             rating_sum: The sum of all the ratings of a hummusia
             number_of_ratings: The number of people who has rated this hummusia
             return: html represent the raing average in stars
         */
-        let rating_average = rating_sum / number_of_ratings
-        let stars_html = ""
-        while (rating_average > 1) {
-            stars_html += `
+        let ratingAverage = rating_sum / number_of_ratings
+        let starsHtml = ""
+        while (ratingAverage > 1) {
+            starsHtml += `
             <span class="hummusia_star_icon material-symbols-outlined">
             star
             </span>
             `
-            rating_average--;
+            ratingAverage--;
         }
-        if (rating_average > 0.5) {
-            stars_html += `
+        if (ratingAverage > 0.5) {
+            starsHtml += `
             <span class="hummusia_star_icon material-symbols-outlined">
             star_half
             </span>
             `
         }
-        return stars_html
+        return starsHtml
     }
 
-    build_hummusia_in_html(hummusia) {
-        hummusia_html = `
+    buildHummusiaInHtml(hummusia) {
+        hummusiaHtml = `
             < div class="hummusia_item" >
         <h4 class="hummus_container_name">${hummusia['name']}</h4>
         <h4 class="hummus_container_city">${hummusia['city']}</h4>
         <span class="hummusia_icon hummus_container_open material-symbols-outlined">
-            ${this.check_if_open(hummusia['opening_time'], hummusia['closing_time'])}
+            ${this.checkIfOpen(hummusia['openingTime'], hummusia['closingTime'])}
         </span>
         <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
             ${hummusia['kosher'] ? "check_circle" : "cancel"}
         </span>
         <div class="hummus_container_rating">
-            ${this.get_rating_html(hummusia['rating_sum'], hummusia['number_of_ratings'])}
+            ${this.getRatingHtml(hummusia['rating_sum'], hummusia['number_of_ratings'])}
         </div>
     </div >
     `
     }
 
-    add_hummusia_to_ui(hummusia) {
-        hummusia_html = build_hummusia_in_html(hummusia)
-        this.hummus_container.insertAdjacentHTML("afterbegin", hummusia_html);
+    addHummusiaToUi(hummusia) {
+        hummusiaHtml = buildHummusiaInHtml(hummusia)
+        this.hummusContainer.insertAdjacentHTML("afterbegin", hummusiaHtml);
     }
 }
 
