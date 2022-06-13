@@ -1,0 +1,22 @@
+/*
+Name: search_page.js
+Author: Hanich 08
+Porpuse: Styling the search page.
+*/
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0.8;
+}
+
+.filter_section {
+    background-color: var(--light-gray);
+    padding: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

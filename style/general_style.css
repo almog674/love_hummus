@@ -19,17 +19,20 @@ html {
     --teal-green: #128C7E;
     --teal-dark-green: #075E54;
     --light-green: #25D366;
-    --blue: #34B7F1
+    --blue: #34B7F1;
+    --light-gray: #AAB8C2;
 }
 
-body {
-    font-size: 1.6rem;
-    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+
+.page {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(315deg, var(--teal-dark-green) 0%, var(--light-green) 74%);
     background-repeat: no-repeat;
     background-position: 0;
     background-size: 100%;
-    height: 100vh;
-    width: 100%;
+    font-size: 1.6rem;
 }
 
 .regular_button {
@@ -67,3 +70,8 @@ body {
 .primary_title {}
 
 .secondary_title {}
+
+.navbar {
+    flex: 0.2;
+    background-color: var(--light-gray);
+}

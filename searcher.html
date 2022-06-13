@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>search by filter</title>
-    </head>
-    <body>
-        <h1>search by filter</h1>
-        <label for="filters">Choose filter:</label>
-        <select id="filters">
-            <option value="Name">Name</option>
-            <option value="City">City</option>
-            <option value="Kosher">Kosher</option>
-        </select>
 
-        <input type="text"><br><br>
-        
-        <label for="price">Choose Price:</label>
-        <select name="price" id="price">
-            <option value="cheap">cheap</option>
-            <option value="medium">medium</option>
-            <option value="Expensive">Expensive</option>
-        </select><br><br>
+<head>
+    <title>search by filter</title>
+    <link rel="stylesheet" href="style/general_style.css">
+    <link rel="stylesheet" href="style/search_page.css">
+</head>
 
-        <label for="kosher">Choose if Kosher:</label>
-        <select name="kosher" id="kosher">
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select><br><br>
+<body>
+    <page class="page">
+        <div id="navbar">
 
-        <label for="rate">Choose minimum rate:</label>
-        <input type="text"><br><br>
+        </div>
+        <main class="main_content">
+            <section class="filter_section">
+                <h1 class="primary_header">search by filter</h1>
+                <div>
+                    <label for="filters">Choose filter:</label>
+                    <select id="filters">
+                        <option value="Name">Name</option>
+                        <option value="City">City</option>
+                        <option value="Kosher">Kosher</option>
+                    </select>
 
-        <input type="submit"></input>
+                    <input placeholder="Filter value" required class="regular_input" type="text"><br><br>
+                </div>
+                <div>
+                    <label for="price">Choose Price:</label>
+                    <select name="price" id="price">
+                        <option value="cheap">cheap</option>
+                        <option value="medium">medium</option>
+                        <option value="Expensive">Expensive</option>
+                    </select><br><br>
+                </div>
+                <div>
+                    <label for="kosher">Choose if Kosher:</label>
+                    <select name="kosher" id="kosher">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select><br><br>
+                </div>
+                <div>
+                    <label for="rate">Choose minimum rate:</label>
+                    <input class="regular_input" type="text"><br><br>
+                </div>
+                <button class="regular_button">Search</button>
 
-    </body>
+            </section>
+            <section class="display_section">
+                <div class="hummus_container">
+                    <div class="hummus_container_top">
+                        <h2 class="secondary_header">Humusiot found</h2>
+                    </div>
+                    <div class="hummus_container_bottom">
+                        <!-- Fill with humusiot -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </page>
+
+</body>
+
 </html>
