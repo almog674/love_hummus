@@ -13,6 +13,7 @@ Porpuse: Styling general objects for using all over the program.
     box-sizing: border-box;
     text-decoration: none;
     color: black;
+    outline: none;
 }
 
 html {
@@ -64,7 +65,10 @@ html {
     outline: none;
 }
 
-.primary_title {}
+.primary_header {
+    font-size: 2.6rem;
+
+}
 
 .secondary_title {}
 

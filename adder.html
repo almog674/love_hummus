@@ -4,6 +4,10 @@
 <head>
     <title>add new hummusia</title>
     <link rel="stylesheet" href="style/general_style.css">
+    <link rel="stylesheet" href="style/rate_page.css">
+    <link rel="stylesheet" href="style/special_input.css">
+    <link rel="stylesheet" href="style/adder_page.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -50,14 +54,14 @@
                 </div>
             </a>
 
-            <a href="adderd.html" class="navbar_item">
+            <a href="adder.html" class="navbar_item">
                 <div class="navbar_show_part">
                     <span class="navbar_icon material-symbols-outlined">
                         add_circle
                     </span>
                 </div>
                 <div class="navber_hidden_part">
-                    <h2 class="navbar_header">Home</h2>
+                    <h2 class="navbar_header">Add</h2>
                 </div>
             </a>
         </div>
@@ -65,27 +69,50 @@
 
 
         <main class="main_content">
-            <h1>add new hummusia</h1>
-            <label>Hummusia Name:</label>
-            <input type="text" id="name"><br><br>
+            <div class="adder_container">
+                <div class="adder_container_right">
+                    <img src="assets/world_image.svg" alt="" class="rate_section_image">
+                    <h1 class="primary_header">Share your hummusia!</h1>
+                </div>
+                <div class="adder_container_left">
+                    <div class="adder_container_left_top">
+                        <h1 class="primary_header">add new hummusia</h1>
+                    </div>
+                    <div class="adder_container_left_bottom">
 
-            <label>Hummusia City:</label>
-            <input type="text" id="city"><br><br>
+                        <form action="#" class="add_hummusia_form">
+                            <div class="special_input_container">
+                                <input type="text" class="special_input" placeholder="Hummusia Name">
+                                <label class="special_input_label" for="rate">Hummusia Name</label>
+                            </div>
 
-            <label for="kosher">Choose if Kosher:</label>
-            <select name="kosher" id="kosher">
-                <option value="true">true</option>
-                <option value="false">false</option>
-            </select><br><br>
+                            <div class="special_input_container">
+                                <input type="text" class="special_input" id="city_input" placeholder="Hummusia City">
+                                <label class="special_input_label" for="rate">Hummusia City</label>
+                            </div>
 
-            <label for="open">Choose opening hours:</label>
+                            <div class="adder_input_container">
+                                <label for="kosher">Choose if Kosher:</label>
+                                <select name="kosher" id="kosher">
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+                                </select><br><br>
+                            </div>
 
-            <input type="time" id="open"></input>
-            <label>-</label>
-            <input type="time" id="close"></input>
-            <br><br>
+                            <div class="adder_input_container">
+                                <label for="open">Choose opening hours:</label>
 
-            <button class="regular_button">Add now!</button>
+                                <input type="time" id="open"></input>
+                                <label>-</label>
+                                <input type="time" id="close"></input>
+                            </div>
+
+                            <button class="regular_button">Add now!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
 
         </main>
     </page>
