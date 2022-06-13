@@ -46,6 +46,7 @@ html {
     border-radius: 0.8rem;
     transition: all 0.3s;
     outline: None;
+    width: 14rem;
 }
 
 .regular_button:hover {

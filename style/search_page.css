@@ -14,9 +14,23 @@ Porpuse: Styling the search page.
 
 .filter_section {
     background-color: var(--light-gray);
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 40rem;
+}
+
+.search_header {
+    margin-bottom: 3rem;
+}
+
+.hummus_container {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 40rem;
+    text-align: center;
+    height: 30rem;
 }

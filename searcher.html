@@ -14,7 +14,7 @@
         </div>
         <main class="main_content">
             <section class="filter_section">
-                <h1 class="primary_header">search by filter</h1>
+                <h1 class="primary_header search_header">search by filter</h1>
                 <div>
                     <label for="filters">Choose filter:</label>
                     <select id="filters">
@@ -23,7 +23,8 @@
                         <option value="Kosher">Kosher</option>
                     </select>
 
-                    <input placeholder="Filter value" required class="regular_input" type="text"><br><br>
+                    <input placeholder="Filter value" id="filters_value" required class="regular_input"
+                        type="text"><br><br>
                 </div>
                 <div>
                     <label for="price">Choose Price:</label>
@@ -42,7 +43,7 @@
                 </div>
                 <div>
                     <label for="rate">Choose minimum rate:</label>
-                    <input class="regular_input" type="text"><br><br>
+                    <input max="5" id="min_rate_input" class="regular_input" type="number"><br><br>
                 </div>
                 <button class="regular_button">Search</button>
 
