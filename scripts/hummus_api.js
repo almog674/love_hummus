@@ -33,7 +33,7 @@ const addHummusiaRequest = async (HummusiaObject) => {
     return result
 }
 
-const rateHummusia = async (hummusia_name, rating) => {
+const rateHummusiaRequest = async (hummusia_name, rating) => {
     // Send a request for rating a specific hummusia to the server
     // hummusia_name: The name of the hummusia we want to rate.
     // rating: The rate we give the hummusia.
