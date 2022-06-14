@@ -5,10 +5,10 @@ Purpose: Handling button presses
 */
 
 Searcher = new HummusiotSearcher()
-document.getElementById("search").onclick = Searcher.get_filter_from_ui();
+document.querySelector("#search").addEventListener("click", Searcher.searchHummusiot)
 
 Rater = new HummusiaRater()
-document.getElementById("rate").onclick = Rater.rateHummusia()
+document.querySelector("#rate").addEventListener("click", Rater.rateHummusia)
 
 Adder = new HummusiaAdder()
-document.getElementById("add").onclick = Rater.addHumusia()
+
