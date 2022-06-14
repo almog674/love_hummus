@@ -14,7 +14,7 @@ class HummusiaAdder {
         document.querySelector("#add").addEventListener("click", this.addHumusia)
     }
 
-    constructHumusiaObject() {
+    constructHumusiaObject = () => {
         let hummusiaObject = {
             name: this.nameInput.value,
             city: this.cityInput.value,
@@ -26,10 +26,10 @@ class HummusiaAdder {
         return hummusiaObject
     }
 
-    addHumusia() {
+    addHumusia = async () => {
         console.log("add")
         let hummusiaObject = this.constructHumusiaObject()
-        let response = addHummusiaRequest(hummusiaObject)
+        let response = await addHummusiaRequest(hummusiaObject)
         alert(response)
     }
 }

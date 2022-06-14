@@ -19,14 +19,14 @@ class HummusiotSearcher {
         document.querySelector("#search").addEventListener("click", this.searchHummusiot)
     }
 
-    async searchHummusiot() {
+    searchHummusiot = async () => {
         console.log("search")
         let filter = this.getFilterFromUi()
-        let hummusiotFound = searchHumusiot(filter)
+        let hummusiotFound = await searchHumusiot(filter)
         this.HummusiotDisplayer.displayHummusiot(hummusiotFound)
     }
 
-    getFilterFromUi() {
+    getFilterFromUi = () => {
         let fieldterToFilter = this.fieldToFilter.value
         filter = `{
                 {${fieldterToFilter}: ${this.fieldToFIlterInput.value}},
