@@ -30,7 +30,7 @@ class HummusiotDisplayer {
             number_of_ratings: The number of people who has rated this hummusia
             return: html represent the raing average in stars
         */
-        let ratingAverage = rating_sum / number_of_ratings
+        let ratingAverage = ratingSum / numberOfRatings
         let starsHtml = ""
         while (ratingAverage > 1) {
             starsHtml += `
@@ -51,6 +51,10 @@ class HummusiotDisplayer {
     }
 
     buildHummusiaInHtml(hummusia) {
+        /*
+        Builds the html which represent the hummusia object.
+        hummusia: An object with the nedded data for hummusia
+        */
         hummusiaHtml = `
             < div class="hummusia_item" >
         <h4 class="hummus_container_name">${hummusia['name']}</h4>
@@ -69,8 +73,21 @@ class HummusiotDisplayer {
     }
 
     addHummusiaToUi(hummusia) {
+        /*
+        hummusia: A hummusia we want to diplay in the ui
+        */
         hummusiaHtml = buildHummusiaInHtml(hummusia)
         this.hummusContainer.insertAdjacentHTML("afterbegin", hummusiaHtml);
+    }
+
+    displayHummusiot(hummusiotArray) {
+        /*
+        Takes an array of hummusiot and display them to the user.
+        hummusiotArray: an array of hummusiot object.
+        */
+        hummusiotArray.map(hummusia => {
+            this.addHummusiaToUi(hummusia)
+        })
     }
 }
 
