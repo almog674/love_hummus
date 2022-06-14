@@ -22,6 +22,7 @@ const addHummusiaRequest = async (HummusiaObject) => {
     // Send a request to add new humusia to the server
     // HummusiaObject: The json of a hummusia
     // Return: status code alogn with message from the client.
+    window.alert(ORIGIN_URL)
     let fullRequestPath = `${ORIGIN_URL}\\${ADD_HUMMUSIOT_URL}`
 
     result = await fetch(fullRequestPath, {
