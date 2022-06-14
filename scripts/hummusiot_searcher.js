@@ -11,7 +11,7 @@ class HummusiotSearcher {
     constructor() {
         this.hummusiot_displayer = new HummusiotDisplayer()
 
-        this.fieldToFilterInput = document.querySelector("#filters")
+        this.fieldToFilter = document.querySelector("#filters")
         this.fieldToFIlterInput = document.querySelector("#filters_value")
         this.priceFilter = document.querySelector("#price")
         this.kosherFilter = document.querySelector("#kosher")
@@ -28,7 +28,7 @@ class HummusiotSearcher {
 
     getFilterFromUi = () => {
         let fieldterToFilter = this.fieldToFilter.value
-        filter = `{
+        let filter = `{
                 {${fieldterToFilter}: ${this.fieldToFIlterInput.value}},
                 {"price_class": ${this.priceFilter.value}},
                 {"is_kosher": ${this.kosherFilter.value}},
@@ -37,3 +37,5 @@ class HummusiotSearcher {
         return filter
     }
 }
+
+hummusia_searcher = new HummusiotSearcher()
