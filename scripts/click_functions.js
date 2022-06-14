@@ -8,8 +8,8 @@ import HummusiaRater from "./hummusiot_rater.js"
 import HummusiaAdder from "./hummusiot_adder.js"
 
 
-Searcher = HummusiotSearcher()
-document.getElementById("search").onclick = Searcher.get_filter_from_ui();
+Searcher = new HummusiotSearcher()
+document.getElementById("search").onclick = Searcher.searchHummusiot();
 
 Rater = HummusiaRater()
 document.getElementById("rate").onclick = Rater.rateHummusia()

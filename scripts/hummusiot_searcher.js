@@ -9,21 +9,22 @@ Purpose: Helps you search hummusiot with the ui.
 class HummusiotSearcher {
     // Helps you search hummusiot with the ui.
     constructor() {
+        this.hummusiot_displayer = new HummusiotDisplayer()
+
         this.fieldToFilterInput = document.querySelector("#filters")
         this.fieldToFIlterInput = document.querySelector("#filters_value")
         this.priceFilter = document.querySelector("#price")
         this.kosherFilter = document.querySelector("#kosher")
         this.minimumRateInput = document.querySelector("#min_rate_input")
-
-        this.hummusapi = new HummusApi(ORIGIN_URL)
     }
 
     async searchHummusiot() {
-        let filter = this.get_filter_from_ui()
-        this.hummusapi.getRequest("/hummusiot", filter)
+        let filter = this.getFilterFromUi()
+        let hummusiotFound = searchHumusiot(filter)
+        this.HummusiotDisplayer.displayHummusiot(hummusiotFound)
     }
 
-    get_filter_from_ui() {
+    getFilterFromUi() {
         let fieldterToFilter = this.fieldToFilter.value
         filter = `{
                 {${fieldterToFilter}: ${this.fieldToFIlterInput.value}},

@@ -3,6 +3,7 @@ Name: hummus_api.js
 Author: Hanich 08
 Purpose: Api for communicating with the server.
 */
+
 const searchHumusiot = async (searchFilter) => {
     // Send a request to search a humusia in the server.
     // searchFilter: A string represent a filter in mongo db, sent in the param of the request.
