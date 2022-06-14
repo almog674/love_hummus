@@ -9,7 +9,7 @@ class HummusiotDisplayer {
         this.hummusContainer = document.querySelector(".hummus_container_bottom")
     }
 
-    checkIfOpen(openingTime, closingTime) {
+    checkIfOpen = (openingTime, closingTime) => {
         /*
             openingTime: The opening time of the hummus.
             closingTime: The closing time of the hummus
@@ -24,7 +24,7 @@ class HummusiotDisplayer {
         }
     }
 
-    getRatingHtml(ratingSum, numberOfRatings) {
+    getRatingHtml = (ratingSum, numberOfRatings) => {
         /*
             rating_sum: The sum of all the ratings of a hummusia
             number_of_ratings: The number of people who has rated this hummusia
@@ -50,42 +50,43 @@ class HummusiotDisplayer {
         return starsHtml
     }
 
-    buildHummusiaInHtml(hummusia) {
+    buildHummusiaInHtml = (hummusia) => {
         /*
         Builds the html which represent the hummusia object.
         hummusia: An object with the nedded data for hummusia
         */
-        hummusiaHtml = `
-            < div class="hummusia_item" >
-        <h4 class="hummus_container_name">${hummusia['name']}</h4>
-        <h4 class="hummus_container_city">${hummusia['city']}</h4>
-        <span class="hummusia_icon hummus_container_open material-symbols-outlined">
-            ${this.checkIfOpen(hummusia['openingTime'], hummusia['closingTime'])}
-        </span>
-        <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
-            ${hummusia['kosher'] ? "check_circle" : "cancel"}
-        </span>
-        <div class="hummus_container_rating">
-            ${this.getRatingHtml(hummusia['rating_sum'], hummusia['number_of_ratings'])}
+        let hummusiaHtml = `
+        <div class="hummusia_item">
+            <h4 class="hummus_container_name">${hummusia['name']}</h4>
+            <h4 class="hummus_container_city">${hummusia['city']}</h4>
+            <span class="hummusia_icon hummus_container_open material-symbols-outlined">
+                ${this.checkIfOpen(hummusia['openingTime'], hummusia['closingTime'])}
+            </span>
+            <span class="hummus_container_kosher hummusia_icon material-symbols-outlined">
+                ${hummusia['is_kosher'] == 'true' ? "check_circle" : "cancel"}
+            </span>
+            <div class="hummus_container_rating">
+                ${this.getRatingHtml(hummusia['rating_sum'], hummusia['number_of_ratings'])}
+            </div>
         </div>
-    </div >
     `
+        return hummusiaHtml
     }
 
-    addHummusiaToUi(hummusia) {
+    addHummusiaToUi = (hummusia) => {
         /*
         hummusia: A hummusia we want to diplay in the ui
         */
-        hummusiaHtml = buildHummusiaInHtml(hummusia)
+        let hummusiaHtml = this.buildHummusiaInHtml(hummusia)
         this.hummusContainer.insertAdjacentHTML("afterbegin", hummusiaHtml);
     }
 
-    displayHummusiot(hummusiotArray) {
+    displayHummusiot = (hummusiotArray) => {
         /*
         Takes an array of hummusiot and display them to the user.
         hummusiotArray: an array of hummusiot object.
         */
-        hummusiotArray.map(hummusia => {
+        Array.prototype.forEach.call(hummusiotArray, hummusia => {
             this.addHummusiaToUi(hummusia)
         })
     }

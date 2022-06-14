@@ -9,7 +9,7 @@ Purpose: Helps you search hummusiot with the ui.
 class HummusiotSearcher {
     // Helps you search hummusiot with the ui.
     constructor() {
-        this.hummusiot_displayer = new HummusiotDisplayer()
+        this.HummusiotDisplayer = new HummusiotDisplayer()
 
         this.fieldToFilter = document.querySelector("#filters")
         this.fieldToFIlterInput = document.querySelector("#filters_value")
@@ -23,17 +23,23 @@ class HummusiotSearcher {
         console.log("search")
         let filter = this.getFilterFromUi()
         let hummusiotFound = await searchHumusiot(filter)
+        console.log(hummusiotFound)
         this.HummusiotDisplayer.displayHummusiot(hummusiotFound)
     }
 
     getFilterFromUi = () => {
         let fieldterToFilter = this.fieldToFilter.value
+        // let filter = `{
+        //         "${fieldterToFilter}": "${this.fieldToFIlterInput.value}",
+        //         "price_class": "${this.priceFilter.value}",
+        //         "is_kosher": "${this.kosherFilter.value}",
+        //         "minimum_rate_filter": {$gte: ${this.minimumRateInput.value}}
+        //     }`
+
         let filter = `{
-                {${fieldterToFilter}: ${this.fieldToFIlterInput.value}},
-                {"price_class": ${this.priceFilter.value}},
-                {"is_kosher": ${this.kosherFilter.value}},
-                {"minimum_rate_filter": {$gte: ${this.minimumRateInput.value}}}
-            }`
+            "${fieldterToFilter}": "${this.fieldToFIlterInput.value}",
+            "price_class": "${this.priceFilter.value}"
+        }`
         return filter
     }
 }

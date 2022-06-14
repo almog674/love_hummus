@@ -8,32 +8,27 @@ const searchHumusiot = async (searchFilter) => {
     // Send a request to search a humusia in the server.
     // searchFilter: A string represent a filter in mongo db, sent in the param of the request.
     // Return: All the hummusiot which stand in the filter criteria.
-    let fullRequestPath = `${ORIGIN_URL}\\${SEARCH_HUMUSIOT_URL}`
-
+    let fullRequestPath = `${ORIGIN_URL}\\${SEARCH_HUMUSIOT_URL}\\${searchFilter}`
     result = await fetch(fullRequestPath, {
-        param: { filter: searchFilter },
         origin: ORIGIN_URL
     })
+    let jsonResult = await result.json();
 
-    return result
+    return jsonResult
 }
 
 const addHummusiaRequest = async (HummusiaObject) => {
     // Send a request to add new humusia to the server
     // HummusiaObject: The json of a hummusia
     // Return: status code alogn with message from the client.
-    window.alert(ORIGIN_URL)
     let fullRequestPath = `${ORIGIN_URL}\\${ADD_HUMMUSIOT_URL}`
     console.log(HummusiaObject)
     result = await fetch(fullRequestPath, {
         method: "POST",
         body: HummusiaObject,
-        origin: ORIGIN_URL,
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
+        origin: ORIGIN_URL
     })
+
 
     return result
 }
