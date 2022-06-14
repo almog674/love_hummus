@@ -3,46 +3,43 @@ Name: hummus_api.js
 Author: Hanich 08
 Purpose: Api for communicating with the server.
 */
+const searchHumusiot = async (searchFilter) => {
+    // Send a request to search a humusia in the server.
+    // searchFilter: A string represent a filter in mongo db, sent in the param of the request.
+    // Return: All the hummusiot which stand in the filter criteria.
+    let fullRequestPath = `${this.originUrl}\\${SEARCH_HUMUSIOT_URL}`
 
-class HummusApi {
-    // Api for communicating with the server.
-    constructor(originUrl) {
-        this.originUrl = originUrl
-    }
+    result = await fetch(fullRequestPath, {
+        param: { filter: searchFilter }
+    })
 
-    async getRequest(requestUrl, requestQuery) {
-        // Sends a get request to the server
-        // requestUrl: the user we want to send to
-        // requestQuery: the query we want to send to the server
-        let fullRequestPath = `${this.originUrl}\\${requestUrl}`
-        result = await fetch(fullRequestPath, {
-            query: requestQuery
-        })
-        return result
-    }
+    return result
+}
 
-    async postRequest(requestUrl, request_body) {
-        // Send a post request to the server
-        // requestUrl: the user we want to send to
-        // request_body: the data we want to send to the server
-        let fullRequestPath = `${this.originUrl}\\${requestUrl}`
-        result = await fetch(fullRequestPath, {
-            method: "POST",
-            body: request_body
-        })
-        return result
-    }
+const addHummusiaRequest = async (HummusiaObject) => {
+    // Send a request to add new humusia to the server
+    // HummusiaObject: The json of a hummusia
+    // Return: status code alogn with message from the client.
+    let fullRequestPath = `${this.originUrl}\\${ADD_HUMMUSIOT_URL}`
 
-    async putRequest(requestUrl, request_body) {
-        // Send a post request to the server
-        // requestUrl: the user we want to send to
-        // request_body: the data we want to send to the server
-        let fullRequestPath = `${this.originUrl}\\${requestUrl}`
-        result = await fetch(fullRequestPath, {
-            method: "PUT",
-            body: request_body
-        })
-        return result
-    }
+    result = await fetch(fullRequestPath, {
+        method: "POST",
+        body: HummusiaObject
+    })
 
+    return result
+}
+
+const rateHummusia = async (hummusia_name, rating) => {
+    // Send a request for rating a specific hummusia to the server
+    // hummusia_name: The name of the hummusia we want to rate.
+    // rating: The rate we give the hummusia.
+    let hummusia_id = searchHumusiot({ "name": hummusia_name })
+    let fullRequestPath = `${this.originUrl}\\hummusiot\\${hummusia_id}\\${rating}`
+
+    result = await fetch(fullRequestPath, {
+        method: "PUT",
+    })
+
+    return result
 }
