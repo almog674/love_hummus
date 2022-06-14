@@ -1,6 +1,6 @@
 /*
 Name: hummusia_rater.js
-Author: Hanich 08
+Author: Hanich 02
 Purpose: Lets the user add humusia to the database.
 */
 
@@ -12,11 +12,8 @@ class HummusiaRater {
         this.ratingNumberInput = document.querySelector("#rating_number_input")
     }
 
-    constractRatingRequest() {
-
-    }
 
     rateHummusia() {
-
+    rateHummusiaRequest(this.ratingNameInput.value, this.ratingNumberInput.value)
     }
 }
