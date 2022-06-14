@@ -23,11 +23,15 @@ const addHummusiaRequest = async (HummusiaObject) => {
     // HummusiaObject: The json of a hummusia
     // Return: status code alogn with message from the client.
     let fullRequestPath = `${ORIGIN_URL}\\${ADD_HUMMUSIOT_URL}`
-
+    console.log(HummusiaObject)
     result = await fetch(fullRequestPath, {
         method: "POST",
         body: HummusiaObject,
-        origin: ORIGIN_URL
+        origin: ORIGIN_URL,
+        mode: 'cors',
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
     })
 
     return result

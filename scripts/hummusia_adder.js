@@ -15,14 +15,14 @@ class HummusiaAdder {
     }
 
     constructHumusiaObject = () => {
-        let hummusiaObject = {
-            name: this.nameInput.value,
-            city: this.cityInput.value,
-            is_kosher: this.kosherInput.value,
-            open_time: this.openInput.value,
-            close_time: this.closeInput.value,
-            close: this.closeInput.value
-        }
+        let hummusiaObject = `{
+            "name": ${this.nameInput.value},
+            "city": ${this.cityInput.value},
+            "is_kosher": ${this.kosherInput.value},
+            "open_time": ${this.openInput.value},
+            "close_time": ${this.closeInput.value},
+        }`
+        console.log(hummusiaObject)
         return hummusiaObject
     }
 
