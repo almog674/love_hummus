@@ -16,9 +16,11 @@ class HummusiotSearcher {
         this.priceFilter = document.querySelector("#price")
         this.kosherFilter = document.querySelector("#kosher")
         this.minimumRateInput = document.querySelector("#min_rate_input")
+        document.querySelector("#search").addEventListener("click", this.searchHummusiot)
     }
 
     async searchHummusiot() {
+        console.log("search")
         let filter = this.getFilterFromUi()
         let hummusiotFound = searchHumusiot(filter)
         this.HummusiotDisplayer.displayHummusiot(hummusiotFound)

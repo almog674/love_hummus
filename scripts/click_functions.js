@@ -4,17 +4,11 @@ Author: Hanich 02
 Purpose: Handling button presses
 */
 
-<<<<<<< HEAD
-
 Searcher = new HummusiotSearcher()
-document.getElementById("search").onclick = Searcher.searchHummusiot();
-=======
-Searcher = new HummusiotSearcher()
-document.getElementById("search").onclick = Searcher.get_filter_from_ui();
->>>>>>> 6bb25879bf93f04cb8274ed90784adb77855fe71
+document.querySelector("#search").addEventListener("click", Searcher.searchHummusiot)
 
 Rater = new HummusiaRater()
-document.getElementById("rate").onclick = Rater.rateHummusia()
+document.querySelector("#rate").addEventListener("click", Rater.rateHummusia)
 
 Adder = new HummusiaAdder()
-document.getElementById("add").onclick = Rater.addHumusia()
+

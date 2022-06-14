@@ -11,6 +11,7 @@ class HummusiaAdder {
         this.kosherInput = document.querySelector("#add_humusia_kosher_input")
         this.openInput = document.querySelector("#add_humusia_open_input")
         this.closeInput = document.querySelector("#add_humusia_close_input")
+        document.querySelector("#add").addEventListener("click", this.addHumusia)
     }
 
     constructHumusiaObject() {
@@ -26,8 +27,11 @@ class HummusiaAdder {
     }
 
     addHumusia() {
+        console.log("add")
         let hummusiaObject = this.constructHumusiaObject()
         let response = addHummusiaRequest(hummusiaObject)
         alert(response)
     }
 }
+
+hummusia_adder = new HummusiaAdder()
