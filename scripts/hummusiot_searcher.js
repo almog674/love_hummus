@@ -38,7 +38,8 @@ class HummusiotSearcher {
 
         let filter = `{
             "${fieldterToFilter}": "${this.fieldToFIlterInput.value}",
-            "price_class": "${this.priceFilter.value}"
+            "price_class": "${this.priceFilter.value}",
+            "is_kosher": "${this.kosherFilter.value}"
         }`
         return filter
     }

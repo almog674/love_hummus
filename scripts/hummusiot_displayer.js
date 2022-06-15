@@ -98,10 +98,7 @@ class HummusiotDisplayer {
         */
         let hummusiot = this.hummusContainer.children
         console.log(hummusiot)
-        Array.prototype.forEach.call(hummusiot, hummusia => {
-            console.log(hummusia)
-            this.hummusContainer.removeChild(hummusia)
-        })
+        this.hummusContainer.textContent = '';
     }
 }
 
