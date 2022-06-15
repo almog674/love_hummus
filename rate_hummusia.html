@@ -78,14 +78,15 @@
                     </div>
                     <form action="#" class="rate_hummusia_form">
                         <div class="special_input_container">
-                            <input type="text" class="special_input" id="rating_name_input" placeholder="Hummusia Name">
+                            <input type="text" minlength="3" class="special_input rating_name_input"
+                                placeholder="Hummusia Name">
                             <label class="special_input_label" for="rate">Hummusia Name</label>
                         </div>
 
 
 
                         <div class="special_input_container">
-                            <input type="number" max='5' min="0" id="rating_number_input" class="special_input"
+                            <input type="number" max='5' min="0" class="special_input rating_number_input"
                                 placeholder="Rating">
                             <label class="special_input_label" for="rate">Choose rate</label>
                         </div>
@@ -98,6 +99,11 @@
     </page>
 
 
+
 </body>
+<script src="scripts/consts.js"></script>
+<script src="scripts/hummus_api.js"></script>
+<script src="scripts/hummusia_rater.js"></script>
+
 
 </html>

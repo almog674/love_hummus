@@ -86,8 +86,21 @@ class HummusiotDisplayer {
         Takes an array of hummusiot and display them to the user.
         hummusiotArray: an array of hummusiot object.
         */
+        this.cleanCurrentHummusiot()
         Array.prototype.forEach.call(hummusiotArray, hummusia => {
             this.addHummusiaToUi(hummusia)
+        })
+    }
+
+    cleanCurrentHummusiot = () => {
+        /* 
+        
+        */
+        let hummusiot = this.hummusContainer.children
+        console.log(hummusiot)
+        Array.prototype.forEach.call(hummusiot, hummusia => {
+            console.log(hummusia)
+            this.hummusContainer.removeChild(hummusia)
         })
     }
 }

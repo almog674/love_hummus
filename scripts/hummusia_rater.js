@@ -8,14 +8,18 @@ Purpose: Lets the user add humusia to the database.
 
 class HummusiaRater {
     constructor() {
-        this.ratingNameInput = document.querySelector("#rating_name_input")
-        this.ratingNumberInput = document.querySelector("#rating_number_input")
+        this.ratingNameInput = document.querySelector(".rating_name_input")
+        this.ratingNumberInput = document.querySelector(".rating_number_input")
+        console.log(this.ratingNameInput, this.ratingNumberInput)
         document.querySelector("#rate").addEventListener("click", this.rateHummusia)
     }
 
 
-    rateHummusia() {
-    rateHummusiaRequest(this.ratingNameInput.value, this.ratingNumberInput.value)
-    console.log("rate")
+    rateHummusia = () => {
+        console.log(this.ratingNameInput, this.ratingNumberInput)
+        rateHummusiaRequest(this.ratingNameInput.value, this.ratingNumberInput.value)
     }
 }
+
+
+hummusia_searcher = new HummusiaRater()
