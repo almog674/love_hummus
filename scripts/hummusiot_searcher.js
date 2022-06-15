@@ -29,15 +29,8 @@ class HummusiotSearcher {
 
     getFilterFromUi = () => {
         let fieldterToFilter = this.fieldToFilter.value
-        // let filter = `{
-        //         "${fieldterToFilter}": "${this.fieldToFIlterInput.value}",
-        //         "price_class": "${this.priceFilter.value}",
-        //         "is_kosher": "${this.kosherFilter.value}",
-        //         "minimum_rate_filter": {$gte: ${this.minimumRateInput.value}}
-        //     }`
-
         let filter = `{
-            "${fieldterToFilter}": "${this.fieldToFIlterInput.value}",
+            "${fieldterToFilter}": {"$regex" : ".*${this.fieldToFIlterInput.value}.*"},
             "price_class": "${this.priceFilter.value}",
             "is_kosher": "${this.kosherFilter.value}"
         }`
