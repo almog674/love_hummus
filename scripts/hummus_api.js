@@ -22,10 +22,14 @@ const addHummusiaRequest = async (HummusiaObject) => {
     // HummusiaObject: The json of a hummusia
     // Return: status code alogn with message from the client.
     let fullRequestPath = `${ORIGIN_URL}\\${ADD_HUMMUSIOT_URL}`
+    console.log(HummusiaObject)
     result = await fetch(fullRequestPath, {
         method: "POST",
         body: HummusiaObject,
-        origin: ORIGIN_URL
+        origin: ORIGIN_URL,
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
 
 
@@ -39,6 +43,7 @@ const rateHummusiaRequest = async (hummusia_name, rating) => {
     let fullRequestPath = `${ORIGIN_URL}\\hummusiot\\${hummusia_name}\\${rating}`
     console.log(fullRequestPath)
     result = await fetch(fullRequestPath, {
+        method: "PUT",
         origin: ORIGIN_URL
     })
 
